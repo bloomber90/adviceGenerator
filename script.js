@@ -4,15 +4,13 @@ const btn = document.querySelector('.btn-generator')
 
 const URL = 'https://api.adviceslip.com/advice'
 
-
-
 const funcEngine = () => {
-    
-axios.get(URL).then((res) => {
-    console.log(res)
-    quote.textContent = `"${res.data.slip.advice}"`
-    number.textContent = res.data.slip.id;
-})}
+	axios.get(URL).then(res => {
+		console.log(res)
+		quote.textContent = `"${res.data.slip.advice}"`
+		number.textContent = res.data.slip.id
+	})
+}
 
+funcEngine()
 btn.addEventListener('click', funcEngine)
-
